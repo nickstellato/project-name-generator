@@ -1,9 +1,42 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   height: 100vh;
   width: 100%;
-  background-color: blue;
+  background-color: #222222;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-align: center;
+}
+
+h1 {
+  margin: 1rem 0;
+  color: #f9f9f9f9;
+  font-size: 3rem;
+  line-height: calc(3rem * 1.42857);
+}
+
+.name {
+  margin: 1rem 0;
+  color: lightblue;
+  font-size: 4rem;
+  line-height: calc(4rem * 1.42857);
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  color: #f9f9f9f9;
+  border: 5px solid #f9f9f9f9;
+  padding: 5px;
+  font-size: 2rem;
+  line-height: calc(2rem * 1.42857);
 }
