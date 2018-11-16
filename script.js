@@ -1,18 +1,30 @@
+randomNumber = max => {
+  return Math.floor(Math.random() * Math.floor(max));
+};
+
 getMountain = () => {
-  // find an API to use to randomly select a mountain range
-  return "Alps";
+  return "mountain";
 };
 
 getAdverb = () => {
-  // url = "https://api.datamuse.com/words?rel_jjb=mountain";
-  // XMLHttpRequest;
-  return "Real";
+  fetch("https://api.datamuse.com/words?rel_jjb=mountain")
+    .then(response => {
+      return response.json();
+    })
+    .then(json => {
+      const max = json.length;
+      const random = randomNumber(max);
+      return json[random].word;
+    })
+    .catch(error => {
+      console.error(error);
+    });
 };
 
 generateProjectName = () => {
-  console.log("Clicked");
-  const mountain = getMountain();
   const adverb = getAdverb();
+  console.log(adverb);
+  const mountain = getMountain();
   const name = document.querySelector(".name");
   projectName = `${adverb} ${mountain}`;
   name.innerText = projectName;
