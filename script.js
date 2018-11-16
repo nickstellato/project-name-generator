@@ -15,7 +15,7 @@ generateProjectName = () => {
   const adverb = getAdverb();
   const name = document.querySelector(".name");
   projectName = `${adverb} ${mountain}`;
-  name.innerHTML = projectName;
+  name.innerText = projectName;
 };
 
 const button = document.querySelector(".btn");
